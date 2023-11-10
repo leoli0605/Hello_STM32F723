@@ -133,7 +133,8 @@ C_INCLUDES =  \
 -IDrivers/STM32_LL_Driver/Inc \
 -IDrivers/STM32F7xx_HAL_Driver/Inc/Legacy \
 -IDrivers/CMSIS/Device/ST/STM32F7xx/Include \
--IDrivers/CMSIS/Include
+-IDrivers/CMSIS/Include \
+-IDrivers/cUtils
 
 
 # compile gcc flags
