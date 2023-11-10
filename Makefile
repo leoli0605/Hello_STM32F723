@@ -67,6 +67,8 @@ Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_hcd.c \
 Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.c \
 Drivers/STM32_LL_Driver/Src/STM32_LL_I2C_Master.c \
 Drivers/STM32_LL_Driver/Src/STM32_LL_SPI_Master.c \
+Drivers/STM32_LL_Driver/Src/STM32_LL_System.c \
+Drivers/STM32_LL_Driver/Src/STM32_LL_USART_Master.c \
 Core/Src/system_stm32f7xx.c
 
 # ASM sources
