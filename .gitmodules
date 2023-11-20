@@ -4,3 +4,6 @@
 [submodule "Drivers/cUtils"]
 	path = Drivers/cUtils
 	url = git@github.com:leoli0605/cUtils.git
+[submodule "Drivers/UtilityClang"]
+	path = Drivers/UtilityClang
+	url = git@github.com:leoli0605/UtilityClang.git
