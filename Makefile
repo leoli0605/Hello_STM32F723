@@ -71,6 +71,9 @@ Core/Src/system_stm32f7xx.c
 ASM_SOURCES =  \
 startup_stm32f723xx.s
 
+# List of assembly source file names without directory paths and without extension
+ASM_BASENAMES = $(basename $(notdir $(ASM_SOURCES)))
+
 
 #######################################
 # binaries
