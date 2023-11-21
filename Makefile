@@ -152,7 +152,6 @@ else
 C_DEFS += -DDISABLE_UART
 endif
 
-
 # AS includes
 AS_INCLUDES =
 
