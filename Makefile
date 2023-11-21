@@ -19,17 +19,27 @@ TARGET = Hello_STM32F723
 ######################################
 # building variables
 ######################################
-# debug build?
+# debug build? 0: for release build (no debug info), 1: for debug build (with debug info)
 DEBUG = 1
-# optimization
+# optimization: -O0, -O1, -O2, -O3, -Os, -Ofast or -Og for debug build (default)
+ifeq ($(DEBUG), 1)
 OPT = -Og
+else
+OPT = -O2
+endif
 
 
 #######################################
 # paths
 #######################################
 # Build path
-BUILD_DIR = build
+ifeq ($(OS),Windows_NT)
+# windows path: your\build\path
+BUILD_DIR := Source\build
+else
+# linux path: your/build/path
+BUILD_DIR := Source/build
+endif
 
 ######################################
 # source
@@ -135,6 +145,12 @@ C_DEFS =  \
 -DUSE_HAL_DRIVER \
 -DSTM32F723xx
 
+ifeq ($(DEBUG), 1)
+C_DEFS += -DDEBUG
+else
+C_DEFS += -DDISABLE_UART
+endif
+
 
 # AS includes
 AS_INCLUDES =
@@ -212,7 +228,13 @@ $(BUILD_DIR):
 # clean up
 #######################################
 clean:
-	-rm -fR $(BUILD_DIR)
+ifeq ($(OS),Windows_NT)
+	del /Q /F "$(BUILD_DIR)"
+#	$(foreach asmfile,$(ASM_BASENAMES),del /Q /F "$(asmfile).s" &)
+else
+	rm -rf $(BUILD_DIR)
+#	$(foreach asmfile,$(ASM_BASENAMES),rm -f "$(asmfile).s";)
+endif
 
 #######################################
 # dependencies
