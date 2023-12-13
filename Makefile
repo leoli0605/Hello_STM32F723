@@ -36,10 +36,10 @@ endif
 # Build path
 ifeq ($(OS),Windows_NT)
 # windows path: your\build\path
-BUILD_DIR := Source\build
+BUILD_DIR := build
 else
 # linux path: your/build/path
-BUILD_DIR := Source/build
+BUILD_DIR := build
 endif
 
 ######################################
@@ -48,38 +48,39 @@ endif
 # C sources
 C_SOURCES =  \
 Core/Src/main.c \
-Core/Src/stm32f7xx_it.c \
 Core/Src/stm32f7xx_hal_msp.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_gpio.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_i2c.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_dma.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_rcc.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_utils.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_exti.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_spi.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usart.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_hcd.c \
-Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.c \
+Core/Src/stm32f7xx_it.c \
 Drivers/STM32_LL_Driver/Src/STM32_LL_I2C_Master.c \
 Drivers/STM32_LL_Driver/Src/STM32_LL_SPI_Master.c \
 Drivers/STM32_LL_Driver/Src/STM32_LL_System.c \
 Drivers/STM32_LL_Driver/Src/STM32_LL_USART_Master.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_hcd.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_dma.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_exti.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_gpio.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_i2c.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_rcc.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_spi.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usart.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.c \
+Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_utils.c \
+Drivers/UtilityClang/progressbar.c \
 Core/Src/system_stm32f7xx.c
 
 # ASM sources
@@ -158,12 +159,12 @@ AS_INCLUDES =
 # C includes
 C_INCLUDES =  \
 -ICore/Inc \
--IDrivers/STM32F7xx_HAL_Driver/Inc \
--IDrivers/STM32_LL_Driver/Inc \
--IDrivers/STM32F7xx_HAL_Driver/Inc/Legacy \
 -IDrivers/CMSIS/Device/ST/STM32F7xx/Include \
 -IDrivers/CMSIS/Include \
--IDrivers/cUtils
+-IDrivers/STM32_LL_Driver/Inc \
+-IDrivers/STM32F7xx_HAL_Driver/Inc \
+-IDrivers/STM32F7xx_HAL_Driver/Inc/Legacy \
+-IDrivers/UtilityClang
 
 
 # compile gcc flags
